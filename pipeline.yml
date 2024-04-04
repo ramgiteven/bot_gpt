@@ -19,9 +19,9 @@ stages:
         set -e
         echo Building Docker image...
         docker build \
-          --build-arg AIRTABLE_API_KEY=$(AIRTABLE_API_KEY) \
-          --build-arg GOOGLE_CLOUD_API_KEY=$(GOOGLE_CLOUD_API_KEY) \
-          --build-arg OPENAI_API_KEY=$(OPENAI_API_KEY) \
+          --build-arg AIRTABLE=$(AIRTABLE_API_KEY) \
+          --build-arg GOOGLE_CLOUD=$(GOOGLE_CLOUD_API_KEY) \
+          --build-arg OPENAI=$(OPENAI_API_KEY) \
           -t $(IMAGE_NAME):$(TAG) .
         docker images
       displayName: 'Build Docker image'
