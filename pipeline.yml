@@ -15,12 +15,18 @@ stages:
   jobs:
   - job: RunUnittest
     steps:
+    
+    - script: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+      
+      displayName: 'Install dependencies'
 
     - script: |
         set -e
         python -m unittest discover -s tests -p 'test/test.py'
   
-    displayName: 'Run unit tests'
+      displayName: 'Run unit tests'
 
 - stage: BuildAndPush
   jobs:
