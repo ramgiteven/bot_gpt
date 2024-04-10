@@ -10,6 +10,18 @@ variables:
 - group: bot-gpt-vars
 
 stages:
+
+- stage: Unittest
+  jobs:
+  - job: RunUnittest
+    steps:
+
+    - script: |
+        set -e
+        python -m unittest discover -s tests -p 'test/test.py'
+  
+    displayName: 'Run unit tests'
+
 - stage: BuildAndPush
   jobs:
   - job: BuildAndPushImage
