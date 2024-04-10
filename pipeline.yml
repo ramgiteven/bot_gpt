@@ -24,7 +24,7 @@ stages:
 
     - script: |
         set -e
-        python -m unittest discover -s tests -p 'test/test.py'
+        python -m unittest 'test/test.py' 
   
       displayName: 'Run unit tests'
 
