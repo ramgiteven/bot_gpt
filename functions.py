@@ -217,7 +217,7 @@ def create_assistant(client):
             }
         ],
         file_ids=[file.id])
-
+    print("hola soy un coment")
     # Create a new assistant.json file to load on future runs
     with open(assistant_file_path, 'w') as file:
       json.dump({'assistant_id': assistant.id}, file)
